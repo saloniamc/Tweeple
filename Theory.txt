@@ -46,3 +46,15 @@ AWS-
 2. adding Tailwind css to it.
 
 
+
+           -------- tweeple-client :  Yarn setup ------
+
+npm install --global yarn
+yarn create next-app .      //asking yarn create a new next app for me in the present working directory
+
+yarn dev           // to start a development sserver on the frontend 
+                   // - basically start a server on localhost3000
+                   // creates a next.js landing page on the screen
+
+
+.tsx  - typescript xml
