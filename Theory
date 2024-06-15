@@ -1,0 +1,48 @@
+Node.js -
+  Cross platform, javascript runtime environment
+
+NPM - Node Package Manager
+   
+    CLI utility to install and uninstall packages from the 
+    command line.
+    install , uninstall or manage dependencies
+
+    yarn is an alternative to npm
+
+
+graphQL-
+     altern to RestAPI 
+     This project will use APOLLO GraphQL server - kind of Framework or server for hosting our schemas and queries and mutations.
+
+
+Prisma ORM(Object Relation management)-
+            making queries and read and write into oour database.
+
+PostgreSql-
+        powerful relational database system.  
+
+Supabase-
+       for hosting and managing cloud Postgresql database
+
+Next.js-
+       For frontend
+       framework for react(Library for wen and native UI).
+
+Tailwind Css and shadcn-
+       For styling
+      tailwind- library for css (for utility classes).
+      shadcn - library for utilizing various components in our project.
+
+typescript-
+      To code frontend and backend.
+       to maintain code quality and typesafe code.
+
+AWS-
+    For hosting and deployment of the project.
+
+----------- Initialize and setup the frontend -------- 
+
+1. Initialize an empty next.js typescript project
+2. adding Tailwind css to it.
+
+
