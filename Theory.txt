@@ -41,6 +41,11 @@ AWS-
     For hosting and deployment of the project.
 
 ----------- Initialize and setup the frontend -------- 
+Installations:
+node.js : https://nodejs.org/en
+npm
+yarn : npm install --global yarn
+
 
 1. Initialize an empty next.js typescript project
 2. adding Tailwind css to it.
@@ -58,3 +63,11 @@ yarn dev           // to start a development sserver on the frontend
 
 
 .tsx  - typescript xml
+
+React icons-
+   for logos and the icons use the libraray -react icons.
+   //In terminal type this to add react icons 
+   yarn add react-icons
+    and then yarn dev again
+
+

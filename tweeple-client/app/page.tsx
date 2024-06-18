@@ -4,6 +4,7 @@ import { BsTwitter } from "react-icons/bs";
 import { BiBell, BiBookmark, BiEnvelope, BiHash, BiHomeCircle, BiUser } from "react-icons/bi";
 import { CiCircleMore } from "react-icons/ci";
 import { Inter } from "next/font/google";
+import FeedCard from "@/components/FeedCard";
 
 const inter = Inter({subsets : ["latin"]});
 
@@ -57,11 +58,14 @@ export default function Home() {
             {// for each item i want to have an <li></li>
             }
             <ul>
-            {sideBarMenuItems.map(item => 
-            <li className="flex justify-start items-center gap-4 hover:bg-gray-800 rounded-full px-4 py-2 cursor-pointer w-fit mt-2" key={item.title}>
+            {sideBarMenuItems.map((item) => (
+            <li className="flex justify-start items-center gap-4 hover:bg-gray-800 rounded-full px-4 py-2 cursor-pointer w-fit mt-2" 
+            key={item.title}
+            >
               <span>{item.icon}</span>
               <span>{item.title}</span>
-              </li> )}
+              </li> 
+              ))}
 
             </ul>
             <div className=" mt-5 px-3">
@@ -70,8 +74,16 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="col-span-6 border-r-[0.1px] border-l-[0.1px] border-gray-800"></div>
-        <div className="col-span-3"></div>
+        <div className="col-span-5 border-r-[0.1px] border-l-[0.1px] border-gray-800">
+          <FeedCard />
+          <FeedCard />
+          <FeedCard />
+          <FeedCard />
+          <FeedCard />
+        </div>
+        <div className="col-span-3">
+          
+        </div>
 
       </div>
     </div>
