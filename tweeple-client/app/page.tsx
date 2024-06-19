@@ -3,10 +3,8 @@ import Image from "next/image";
 import { BsTwitter } from "react-icons/bs";
 import { BiBell, BiBookmark, BiEnvelope, BiHash, BiHomeCircle, BiUser } from "react-icons/bi";
 import { CiCircleMore } from "react-icons/ci";
-import { Inter } from "next/font/google";
 import FeedCard from "@/components/FeedCard";
 
-const inter = Inter({subsets : ["latin"]});
 
 interface twitterSidebarButton{
   title : string;
@@ -47,9 +45,8 @@ const sideBarMenuItems : twitterSidebarButton[] = [
 ];
 
 export default function Home() {
-  return (
-    <div className={inter.className}>
-      <div className="grid grid-cols-12 h-screen w-screen px-48 ">
+  return ( <div>
+      <div className="grid grid-cols-12 h-screen w-screen px-40 ">
         <div className=" col-span-3  pt-8 px-4">
           <div className="text-3xl h-fit w-fit hover:bg-gray-800 rounded-full p-2 cursor-pointer transition-all">
           <BsTwitter  />
@@ -62,7 +59,7 @@ export default function Home() {
             <li className="flex justify-start items-center gap-4 hover:bg-gray-800 rounded-full px-4 py-2 cursor-pointer w-fit mt-2" 
             key={item.title}
             >
-              <span>{item.icon}</span>
+              <span className="text-3xl">{item.icon}</span>
               <span>{item.title}</span>
               </li> 
               ))}
@@ -74,7 +71,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="col-span-5 border-r-[0.1px] border-l-[0.1px] border-gray-800">
+        <div className="col-span-6 border-r-[0.1px] h-screen overflow-scroll scrollbar-hide border-l-[0.1px] border-gray-800">
+          <FeedCard />
+          <FeedCard />
+          <FeedCard />
           <FeedCard />
           <FeedCard />
           <FeedCard />

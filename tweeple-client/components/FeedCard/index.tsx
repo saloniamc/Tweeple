@@ -3,6 +3,9 @@ import Image from "next/image"
 import { BiMessageRounded, BiUpload } from 'react-icons/bi';
 import { FaRetweet } from 'react-icons/fa';
 import { AiOutlineHeart } from 'react-icons/ai';
+import { Inter } from "next/font/google";
+
+const inter = Inter({subsets : ["latin"]});
 
 //To render this FeedCard in app.tsx file
 //functional component of type React.FC
