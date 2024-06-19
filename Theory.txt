@@ -13,7 +13,8 @@ NPM - Node Package Manager
 graphQL-
      altern to RestAPI 
      This project will use APOLLO GraphQL server - kind of Framework or server for hosting our schemas and queries and mutations.
-
+     QUERY - When we want to get some data from the server it is called as a QUERY
+     MUTATIONS / mutation request - When we want to send (change) some data to the server
 
 Prisma ORM(Object Relation management)-
             making queries and read and write into oour database.
@@ -71,3 +72,31 @@ React icons-
     and then yarn dev again
 
 
+
+----------- Initialize and setup the Backend -------- 
+
+cd ./tweeple-server
+yarn init 
+yarn add typescript -D               //dev dependencies
+tsc --init
+yarn add express                //not a dev dependency
+// typescript Configuration - Setup an empty typescript project
+npx tsc --init  
+
+created src folder- whatever typescript project we have will go into this src folder and we'll compile it.
+setting up root and out directory in tsconfig.json file
+
+outDir - the directory we want to keep our code after compiling 
+
+yarn add tsc-watch -D
+
+yarn add graphql
+
+    "dev": "tsc-watch --onSuccess \"npm run build && npm start\""
+
+watches the src directory and after build commands successful execution , it starts the project
+
+
+https://www.apollographql.com/docs/apollo-server
+
+yarn add @apollo/server graphql
