@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import {GoogleLogin} from "@react-oauth/google";
 import { BsTwitter } from "react-icons/bs";
 import { BiBell, BiBookmark, BiEnvelope, BiHash, BiHomeCircle, BiUser } from "react-icons/bi";
 import { CiCircleMore } from "react-icons/ci";
@@ -81,7 +82,11 @@ export default function Home() {
           <FeedCard />
           <FeedCard />
         </div>
-        <div className="col-span-3">
+        <div className="col-span-3 p-5">
+          <div className="p-5 bg-slate-700 rounded-lg">
+            <h1 className="my-2 text-2xl">New to tweeple?</h1>
+            <GoogleLogin onSuccess={(cred) => console.log(cred)}/>;
+          </div>
           
         </div>
 
