@@ -1,0 +1,65 @@
+[33mcommit dfecee7a319801b479d3376bce7a6afab748dc4c[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: SALONI BAILKAR <Salonisb18.2@gmail.com>
+Date:   Sun Jun 23 23:41:36 2024 +0530
+
+    Designed Add weet modal
+
+[33mcommit 751b61d87c238b7b008639489358613d181525b5[m
+Author: SALONI BAILKAR <Salonisb18.2@gmail.com>
+Date:   Sat Jun 22 23:29:09 2024 +0530
+
+    updated gitignore file
+
+[33mcommit d3032b753b26992a074d9f33b3f58e0abab84e19[m
+Author: SALONI BAILKAR <Salonisb18.2@gmail.com>
+Date:   Thu Jun 20 20:25:52 2024 +0530
+
+    Prisma Setup complete
+
+[33mcommit dc9f0f7c450240dfc6f996aef7f98d52b110e8fd[m
+Author: SALONI BAILKAR <Salonisb18.2@gmail.com>
+Date:   Wed Jun 19 22:02:41 2024 +0530
+
+    readded server files
+
+[33mcommit c0774f3716d5eba8f7ad4df0c7b7279696e4c1cf[m
+Author: SALONI BAILKAR <Salonisb18.2@gmail.com>
+Date:   Wed Jun 19 19:52:43 2024 +0530
+
+    backend setup complete
+
+[33mcommit 1e36588456cf1feb4e4b7e163282b5d9e3dbf169[m
+Author: SALONI BAILKAR <Salonisb18.2@gmail.com>
+Date:   Wed Jun 19 13:43:16 2024 +0530
+
+    scrollbar to feedcard added
+
+[33mcommit d0625fa9137b0ca851c42f81ba9fcb365f9580a9[m
+Author: SALONI BAILKAR <Salonisb18.2@gmail.com>
+Date:   Tue Jun 18 23:57:42 2024 +0530
+
+    Basic feedCard Implemented
+
+[33mcommit 461a675d83fc55d5c2da9c9b49037434466a97a3[m
+Author: SALONI BAILKAR <Salonisb18.2@gmail.com>
+Date:   Sun Jun 16 16:42:34 2024 +0530
+
+    Implemented the Sidebar & its Menu Items.
+
+[33mcommit 150c21a073f46a1607c4ab3a46dbe91e251b6dc9[m
+Author: SALONI BAILKAR <Salonisb18.2@gmail.com>
+Date:   Sat Jun 15 15:45:44 2024 +0530
+
+    Frontend Setup Finished
+
+[33mcommit dc82b8488e470b292549925a286540b285b5713b[m
+Author: SALONI BAILKAR <Salonisb18.2@gmail.com>
+Date:   Sat Jun 15 14:28:24 2024 +0530
+
+    first commit
+
+[33mcommit e07918c859641b5ed14e04c9307e55a9951304ad[m
+Author: SALONI BAILKAR <Salonisb18.2@gmail.com>
+Date:   Sat Jun 15 14:14:40 2024 +0530
+
+    Initial commit

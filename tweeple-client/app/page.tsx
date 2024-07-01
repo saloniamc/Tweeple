@@ -1,9 +1,12 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import { BsTwitter } from "react-icons/bs";
 import { BiBell, BiBookmark, BiEnvelope, BiHash, BiHomeCircle, BiUser } from "react-icons/bi";
 import { CiCircleMore } from "react-icons/ci";
+import {GoogleLogin} from "@react-oauth/google"
 import FeedCard from "@/components/FeedCard";
+import GoogleLoginComponent from "@/components/GoogleLoginComponent/GoogleLoginComponent";
 
 
 interface twitterSidebarButton{
@@ -82,7 +85,10 @@ export default function Home() {
           <FeedCard />
         </div>
         <div className="col-span-3">
-          
+            <div className="p-5 bg-slate-700 rounded-lg">
+              <h1>New to Tweeple?</h1>
+              <GoogleLoginComponent />
+            </div>
         </div>
 
       </div>
