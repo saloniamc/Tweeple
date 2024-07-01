@@ -17,7 +17,9 @@ graphQL-
      MUTATIONS / mutation request - When we want to send (change) some data to the server
 
 Prisma ORM(Object Relation management)-
-            making queries and read and write into oour database.
+            is a layer which hepls us make queries to our database
+            making queries and read and write into our database.
+            models - Tables in a database
 
 PostgreSql-
         powerful relational database system.  
@@ -100,3 +102,22 @@ watches the src directory and after build commands successful execution , it sta
 https://www.apollographql.com/docs/apollo-server
 
 yarn add @apollo/server graphql
+
+
+Installing Prisma 
+    npm install prisma --save-dev
+    yarn add prisma @prisma/client
+    npx prisma init --datasource-provider postgresql
+
+create supabase project 
+        https://supabase.com
+
+npx prisma migrate dev --name added_user_model    
+   
+  - whenever you update th schema.prisma file just run this command to migrate the parcticular 
+    schema to the database      
+
+Authentication
+https://www.npmjs.com/package/@react-oauth/google
+
+yarn add @react-oauth/google     
