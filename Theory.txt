@@ -137,5 +137,6 @@ yarn add jsonwebtoken
     for generating tokens         
 
 npx prisma studio 
-       for prisma studio
+       For prisma studio
+
        Prisma Studio goes up on http://localhost:5555
