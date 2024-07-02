@@ -131,4 +131,11 @@ JWT.IO
     if not we'll create a user and the token, & if user already exists then we'll just create the token.
 
 yarn add axios
-        axios is a library for making api calls.    
+        axios is a library for making api calls.   
+
+yarn add jsonwebtoken
+    for generating tokens         
+
+npx prisma studio 
+       for prisma studio
+       Prisma Studio goes up on http://localhost:5555

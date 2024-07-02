@@ -8,11 +8,40 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.resolvers = void 0;
+const axios_1 = __importDefault(require("axios"));
+const db_1 = require("../../clients/db");
+const jwt_1 = __importDefault(require("../../services/jwt"));
 const queries = {
     verifyGoogleToken: (parents_1, _a) => __awaiter(void 0, [parents_1, _a], void 0, function* (parents, { token }) {
         const googleToken = token;
+        const googleOauthURL = new URL('https://oauth2.googleapis.com/tokeninfo');
+        googleOauthURL.searchParams.set("id_token", googleToken);
+        const { data } = yield axios_1.default.get(googleOauthURL.toString(), {
+            responseType: "json",
+        });
+        const user = yield db_1.prismaClient.user.findUnique({
+            where: { email: data.email },
+        });
+        if (!user) {
+            yield db_1.prismaClient.user.create({
+                data: {
+                    email: data.email,
+                    firstname: data.given_name,
+                    lastname: data.family_name,
+                    profileImgURL: data.picture,
+                },
+            });
+        }
+        const userInDb = yield db_1.prismaClient.user.findUnique({ where: { email: data.email }, });
+        if (!userInDb)
+            throw new Error('User with email not found');
+        const userToken = yield jwt_1.default.generateTokenForUser(userInDb);
+        return userToken;
     }),
 };
 exports.resolvers = { queries };
