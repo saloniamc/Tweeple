@@ -134,7 +134,7 @@ yarn add axios
         axios is a library for making api calls.   
 
 yarn add jsonwebtoken
-    for generating tokens         
+    For generating tokens         
 
 npx prisma studio 
        For prisma studio
