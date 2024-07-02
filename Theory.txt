@@ -120,4 +120,12 @@ npx prisma migrate dev --name added_user_model
 Authentication
 https://www.npmjs.com/package/@react-oauth/google
 
-yarn add @react-oauth/google     
+yarn add @react-oauth/google  
+
+
+JWT.IO
+    the token generated through google signin is short lived so we will send the token generated
+    i.e credential generated when we click on our account for signin, to our server and our server in turn will ask 
+    google about the information of the user through the credential generated., and if token is valid we'll 
+    be checking if the user with that particular email id exists(as we check in jwt.io we get the info about the user)
+    if not we'll create a user and the token, & if user already exists then we'll just create the token.
