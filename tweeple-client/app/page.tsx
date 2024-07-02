@@ -1,10 +1,10 @@
 "use client";
-import React from "react";
+import React, { useCallback } from "react";
 import Image from "next/image";
 import { BsTwitter } from "react-icons/bs";
 import { BiBell, BiBookmark, BiEnvelope, BiHash, BiHomeCircle, BiUser } from "react-icons/bi";
 import { CiCircleMore } from "react-icons/ci";
-import {GoogleLogin} from "@react-oauth/google"
+import {CredentialResponse, GoogleLogin} from "@react-oauth/google"
 import FeedCard from "@/components/FeedCard";
 import GoogleLoginComponent from "@/components/GoogleLoginComponent/GoogleLoginComponent";
 
@@ -48,6 +48,11 @@ const sideBarMenuItems : twitterSidebarButton[] = [
 ];
 
 export default function Home() {
+
+  const handleLoginWithGoogle = useCallback((cred: CredentialResponse) => {
+
+  }, [])
+
   return ( <div>
       <div className="grid grid-cols-12 h-screen w-screen px-40 ">
         <div className=" col-span-3  pt-8 px-4">
