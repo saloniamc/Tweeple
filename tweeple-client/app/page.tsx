@@ -6,7 +6,9 @@ import { BiBell, BiBookmark, BiEnvelope, BiHash, BiHomeCircle, BiUser } from "re
 import { CiCircleMore } from "react-icons/ci";
 import {CredentialResponse, GoogleLogin} from "@react-oauth/google"
 import FeedCard from "@/components/FeedCard";
-import GoogleLoginComponent from "@/components/GoogleLoginComponent/GoogleLoginComponent";
+import { graphqlClient } from "@/clients/api";
+import { verifyUserGoogleTokenQuery } from "@/graphql/query/user";
+import toast from "react-hot-toast";
 
 
 interface twitterSidebarButton{
@@ -49,9 +51,18 @@ const sideBarMenuItems : twitterSidebarButton[] = [
 
 export default function Home() {
 
-  const handleLoginWithGoogle = useCallback((cred: CredentialResponse) => {
+   const handleLoginWithGoogle = useCallback( async(cred: CredentialResponse) => {
+    const googleToken = cred.credential;
+    if(!googleToken) return toast.error(`Google token not found`);
+    const {verifyGoogleToken} = await graphqlClient.request(verifyUserGoogleTokenQuery, {token: googleToken});
 
-  }, [])
+    toast.success("Verified Success");
+    console.log(verifyGoogleToken);
+
+    if(verifyGoogleToken) window.localStorage.setItem("__tweeple_token", verifyGoogleToken);
+  },
+   []
+  );
 
   return ( <div>
       <div className="grid grid-cols-12 h-screen w-screen px-40 ">
@@ -92,7 +103,7 @@ export default function Home() {
         <div className="col-span-3">
             <div className="p-5 bg-slate-700 rounded-lg">
               <h1>New to Tweeple?</h1>
-              <GoogleLoginComponent />
+              <GoogleLogin onSuccess={handleLoginWithGoogle} />
             </div>
         </div>
 

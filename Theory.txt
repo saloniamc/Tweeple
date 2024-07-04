@@ -140,3 +140,25 @@ npx prisma studio
        For prisma studio
 
        Prisma Studio goes up on http://localhost:5555
+
+yarn add graphql-request
+
+-Setting up Codegen
+    -https://the-guild.dev/graphql/codegen
+    -(typescript utility- watches your schema and automatically creaetes typescript
+    types).
+
+    -yarn add graphql
+    -yarn add --dev typescript @graphql-codegen/cli
+    -yarn graphql-code-generator init
+
+What type of application are you building? Application using graphql-request
+? Where is your schema?: (path or url) http://localhost:8000/graphql
+? Where are your operations and fragments?: **/*.{tsx,ts}
+? Where to write the output: gql/
+? Do you want to generate an introspection file? Yes
+? How to name the config file? codegen.ts
+? What script in package.json should run the codegen? codegen  
+
+ yarn add react-hot-toast
+ yarn add cors

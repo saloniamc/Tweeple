@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser, {BodyParser} from "body-parser";
+import cors from "cors";
 import { ApolloServer } from '@apollo/server';
 import { expressMiddleware } from '@apollo/server/express4';
 import { User } from './user';
@@ -8,6 +9,7 @@ export async function initServer(){
     const app = express();
 
     app.use(bodyParser.json());
+    app.use(cors());
 
     //create a graphql server    
     const graphqlServer = new ApolloServer<any>({
