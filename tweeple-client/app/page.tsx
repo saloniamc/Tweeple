@@ -109,9 +109,9 @@ export default function Home() {
               <textarea className="w-full bg-transparent text-xl px-3 border-b border-slate-700" 
               placeholder="What's happening?"
               rows={4}></textarea>
-              <div className="mt-2">
+              <div className="mt-2 flex justify-between items-center">
                 <BiImageAlt  className="text-xl"/>
-                <button className="bg-[#1d9bf0] p-2 font-semibold text-sm rounded-full w-full ">
+                <button className="bg-[#1d9bf0] py-1 px-4 font-semibold text-sm rounded-full ">
                   Tweet
                 </button>
               </div>
