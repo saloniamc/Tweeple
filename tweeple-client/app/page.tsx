@@ -51,6 +51,16 @@ const sideBarMenuItems : twitterSidebarButton[] = [
 
 export default function Home() {
 
+  const {user} = useCurrentUser();
+  const queryClient = useQueryClient();
+
+  const handleSelectImage = useCallback(() => {
+    const input = document.createElement("input");
+    input.setAttribute("type", "file");
+    input.setAttribute("accept", "image/*");
+    input.click();
+  }, []);
+
    const handleLoginWithGoogle = useCallback( async(cred: CredentialResponse) => {
     const googleToken = cred.credential;
     if(!googleToken) return toast.error(`Google token not found`);
@@ -63,6 +73,8 @@ export default function Home() {
   },
    []
   );
+
+
 
   return ( <div>
       <div className="grid grid-cols-12 h-screen w-screen px-40 ">
@@ -110,7 +122,7 @@ export default function Home() {
               placeholder="What's happening?"
               rows={4}></textarea>
               <div className="mt-2 flex justify-between items-center">
-                <BiImageAlt  className="text-xl"/>
+                <BiImageAlt onClick={handleSelectImage} className="text-xl"/>
                 <button className="bg-[#1d9bf0] py-1 px-4 font-semibold text-sm rounded-full ">
                   Tweet
                 </button>
