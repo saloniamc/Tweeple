@@ -6,12 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const JWT_secret = '$uper@1234.';
 class JWTService {
-    static decodeToken(arg0) {
-        throw new Error('Method not implemented.');
-    }
-    static decode(arg0) {
-        throw new Error('Method not implemented.');
-    }
     static generateTokenForUser(user) {
         const payload = {
             id: user === null || user === void 0 ? void 0 : user.id,
@@ -19,6 +13,14 @@ class JWTService {
         };
         const token = jsonwebtoken_1.default.sign(payload, 'JWT_secret');
         return token;
+    }
+    static decodeToken(token) {
+        try {
+            return jsonwebtoken_1.default.verify(token, JWT_secret);
+        }
+        catch (error) {
+            return null;
+        }
     }
 }
 exports.default = JWTService;
