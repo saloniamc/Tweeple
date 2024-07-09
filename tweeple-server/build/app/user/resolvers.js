@@ -16,6 +16,7 @@ exports.resolvers = void 0;
 const axios_1 = __importDefault(require("axios"));
 const db_1 = require("../../clients/db");
 const jwt_1 = __importDefault(require("../../services/jwt"));
+const user_1 = __importDefault(require("../../services/user"));
 const queries = {
     verifyGoogleToken: (parents_1, _a) => __awaiter(void 0, [parents_1, _a], void 0, function* (parents, { token }) {
         const googleToken = token;
@@ -43,5 +44,14 @@ const queries = {
         const userToken = yield jwt_1.default.generateTokenForUser(userInDb);
         return userToken;
     }),
+    getCurrentUser: (parent, args, ctx) => __awaiter(void 0, void 0, void 0, function* () {
+        var _b;
+        const id = (_b = ctx.user) === null || _b === void 0 ? void 0 : _b.id;
+        if (!id)
+            return null;
+        const user = yield user_1.default.getUserById(id);
+        return user;
+    }),
+    getUserById: (parent_1, _c, ctx_1) => __awaiter(void 0, [parent_1, _c, ctx_1], void 0, function* (parent, { id }, ctx) { return user_1.default.getUserById(id); }),
 };
 exports.resolvers = { queries };
