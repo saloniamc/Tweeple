@@ -37,7 +37,7 @@ const queries = {
                 },
             });
         }
-        const userInDb = yield db_1.prismaClient.user.findUnique({ where: { email: data.email }, });
+        const userInDb = yield db_1.prismaClient.user.findUnique({ where: { email: data.email } });
         if (!userInDb)
             throw new Error('User with email not found');
         const userToken = yield jwt_1.default.generateTokenForUser(userInDb);

@@ -2,10 +2,10 @@
 import React, { useCallback } from "react";
 import Image from "next/image";
 import { BsTwitter } from "react-icons/bs";
-import { BiBell, BiBookmark, BiEnvelope, BiHash, BiHomeCircle, BiUser } from "react-icons/bi";
+import { BiBell, BiBookmark, BiEnvelope, BiHash, BiHomeCircle, BiImageAlt, BiUser } from "react-icons/bi";
 import { CiCircleMore } from "react-icons/ci";
 import {CredentialResponse, GoogleLogin} from "@react-oauth/google"
-import FeedCard from "@/components/FeedCard";
+import FeedCard from "@/components/FeedCard"; 
 import { graphqlClient } from "@/clients/api";
 import { verifyUserGoogleTokenQuery } from "@/graphql/query/user";
 import toast from "react-hot-toast";
@@ -91,6 +91,34 @@ export default function Home() {
           </div>
         </div>
         <div className="col-span-6 border-r-[0.1px] h-screen overflow-scroll scrollbar-hide border-l-[0.1px] border-gray-800">
+          <div>
+          <div className="border border-gray-800 p-4 border-l-0 border-r-0 border-b-0 hover:bg-slate-900 transition-all cursor-pointer">
+          <div className="grid grid-cols-12 gap-2">
+          <div className="col-span-1">
+                {user?.profileImageURL && (
+                <Image
+                className="rounded-full"
+                src={user?.profileImageURL}
+                alt="User-Image" 
+                height={50} 
+                width={50}
+                />
+              )}
+            </div>
+            <div className="col-span-11">
+              <textarea className="w-full bg-transparent text-xl px-3 border-b border-slate-700" 
+              placeholder="What's happening?"
+              rows={4}></textarea>
+              <div className="mt-2">
+                <BiImageAlt  className="text-xl"/>
+                <button className="bg-[#1d9bf0] p-2 font-semibold text-sm rounded-full w-full ">
+                  Tweet
+                </button>
+              </div>
+            </div>
+          </div>
+           </div>
+          </div>
           <FeedCard />
           <FeedCard />
           <FeedCard />

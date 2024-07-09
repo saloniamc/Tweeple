@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 import { prismaClient } from "../../clients/db";
 import JWTService from "../../services/jwt";
 
@@ -46,7 +46,7 @@ const queries = {
                 },
             });
         }
-        const userInDb = await prismaClient.user.findUnique({ where :{email: data.email}, });
+        const userInDb = await prismaClient.user.findUnique({ where :{email: data.email} });
 
         if(!userInDb) throw new Error('User with email not found');
 
