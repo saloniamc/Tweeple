@@ -8,11 +8,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.resolvers = void 0;
 const db_1 = require("../../clients/db");
+const user_1 = __importDefault(require("../../services/user"));
 const queries = {
-    getAllTweets: () => db_1.prismaClient.tweet.findMany({ orderBy: { createdAt: "desc" } }),
+// getAllTweets:  () => prismaClient.tweet.findMany({orderBy: { createdAt: "desc"}}),
+// getAllTweets: () => TweetService.getAllTweets(),
 };
 const mutations = {
     createTweet: (parent_1, _a, ctx_1) => __awaiter(void 0, [parent_1, _a, ctx_1], void 0, function* (parent, { payload }, ctx) {
@@ -28,9 +33,15 @@ const mutations = {
         return tweet;
     }),
 };
+// const extraResolvers = {
+//     Tweet: {
+//         author: (parent: Tweet) =>
+//             prismaClient.user.findUnique({where: { id : parent.authorId }}),
+//     },
+// };
 const extraResolvers = {
     Tweet: {
-        author: (parent) => db_1.prismaClient.user.findUnique({ where: { id: parent.authorId } }),
+        author: (parent) => user_1.default.getUserById(parent.authorId),
     },
 };
 exports.resolvers = { mutations, extraResolvers, queries };

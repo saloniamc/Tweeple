@@ -56,7 +56,7 @@ const queries = {
 };
 const extraResolvers = {
     User: {
-        twwets: (parent) => db_1.prismaClient.tweet.findMany({ where: { author: { id: parent.id } } })
+        tweets: (parent) => db_1.prismaClient.tweet.findMany({ where: { author: { id: parent.id } } })
     }
 };
 exports.resolvers = { queries, extraResolvers };

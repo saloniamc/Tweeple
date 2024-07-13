@@ -1,11 +1,5 @@
 "use strict";
-// import { prismaClient } from "../clients/db";
-// import { redisClient } from "../clients/redis";
-// export interface CreateTweetPayload {
-//   content: string;
-//   imageURL?: string;
-//   userId: string;
-// }
+Object.defineProperty(exports, "__esModule", { value: true });
 // class TweetService {
 //   public static async createTweet(data: CreateTweetPayload) {
 //     const rateLimitFlag = await redisClient.get(

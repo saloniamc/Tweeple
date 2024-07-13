@@ -1,11 +1,11 @@
-// import { prismaClient } from "../clients/db";
+import { prismaClient } from "../clients/db";
 // import { redisClient } from "../clients/redis";
 
-// export interface CreateTweetPayload {
-//   content: string;
-//   imageURL?: string;
-//   userId: string;
-// }
+export interface CreateTweetPayload {
+  content: string;
+  imageURL?: string;
+  userId: string;
+}
 
 // class TweetService {
 //   public static async createTweet(data: CreateTweetPayload) {

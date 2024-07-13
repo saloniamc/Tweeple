@@ -1,6 +1,8 @@
 import { Tweet } from "@prisma/client";
 import { prismaClient } from "../../clients/db";
 import {GraphqlContext} from "../../interfaces";
+import UserService from "../../services/user";
+// import TweetService, { CreateTweetPayload } from "../../services/tweet";
 
 interface CreateTweetPayload {
     content: string
@@ -8,7 +10,8 @@ interface CreateTweetPayload {
 }
 
 const queries = {
-    getAllTweets:  () => prismaClient.tweet.findMany({orderBy: { createdAt: "desc"}}),
+    // getAllTweets:  () => prismaClient.tweet.findMany({orderBy: { createdAt: "desc"}}),
+    // getAllTweets: () => TweetService.getAllTweets(),
 };
 
 const mutations = {
@@ -27,11 +30,17 @@ const mutations = {
     },
 };
 
+// const extraResolvers = {
+//     Tweet: {
+//         author: (parent: Tweet) =>
+//             prismaClient.user.findUnique({where: { id : parent.authorId }}),
+//     },
+// };
+
 const extraResolvers = {
     Tweet: {
-        author: (parent: Tweet) =>
-            prismaClient.user.findUnique({where: { id : parent.authorId }}),
+      author: (parent: Tweet) => UserService.getUserById(parent.authorId),
     },
-};
+  };
 
 export const resolvers = {mutations, extraResolvers, queries};
